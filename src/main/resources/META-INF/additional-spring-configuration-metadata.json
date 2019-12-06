@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "pgsql",
+      "type": "java.lang.String",
+      "description": "Description for pgsql."
+  }
+] }
