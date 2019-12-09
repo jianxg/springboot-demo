@@ -1,16 +1,54 @@
 package com.example.springbootdemo.model;
 
-public class User {
-    private String name;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-    public String getName()
-    {
-        return name;
+import javax.persistence.*;
+
+@Entity
+/*PostgreSQL中，您必须指定架构名称，如下所示：*/
+@Table(name = "user",schema = "public")
+@JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
+public class User {
+
+    public User() {
     }
 
-    public void setName(String zhangsan)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    int id;
+
+    String password;
+    String username;
+
+    public int getId()
     {
-        this.name=name;
+        return id;
+    }
+
+    public  void setId(int setId)
+    {
+        this.id=setId;
+    }
+
+    public String getPassword()
+    {
+        return  password;
+    }
+
+    public void setPassword(String setPassword)
+    {
+        this.password=setPassword;
+    }
+
+    public String getUsername()
+    {
+        return username;
+    }
+
+    public void setUsername(String setUsername)
+    {
+        this.username=setUsername;
     }
 
 }

@@ -14,7 +14,7 @@ public class UserController {
     public User getUser()
     {
         User user=new User();
-        user.setName("zhangsan");
+        user.setUsername("zhangsan");
         return user;
     }
 
